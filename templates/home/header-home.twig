@@ -1,12 +1,12 @@
 <style type="text/css">
 .header-home .jumbotron {
-	background-image:url('{{lead_art.src}}'); 
-	height: {{lead_art.height}}px;
+	background-image:url('{{custom_header.url}}'); 
+	height: {{custom_header.height}}px;
 }
 
-{% if lead_art.height > 400 %}
+{% if custom_header.height > 400 %}
 .header-home .jumbotron h1 {
-	margin-top: {{lead_art.height - 200}}px;
+	margin-top: {{custom_header.height - 200}}px;
 }
 {% endif %}
 </style>

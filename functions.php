@@ -41,6 +41,7 @@ class Gustav extends TimberSite {
     function add_to_context($context){
         $context['menu'] = new TimberMenu();
         $context['site'] = $this;
+		$context['custom_header'] = get_custom_header();
         return $context;
     }
 
@@ -58,6 +59,18 @@ class Gustav extends TimberSite {
 Timber::$dirname = 'templates';
 new Gustav();
 
-
 add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'quote' ) );
 add_post_type_support( 'post', 'post-formats' );
+
+$custom_header_args = array(
+	'default-image'          => '',
+	'width'                  => 1170,
+	'height'                 => 0,
+	'flex-height'            => true,
+	'flex-width'             => true,
+	'uploads'                => true,
+	'random-default'         => false,
+	'header-text'            => false,
+);
+
+add_theme_support( 'custom-header', $custom_header_args );
