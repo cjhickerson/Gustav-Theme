@@ -1,0 +1,33 @@
+<style type="text/css">
+.header-home .jumbotron {
+	background-image:url('{{lead_art.src}}'); 
+	height: {{lead_art.height}}px;
+}
+
+{% if lead_art.height > 400 %}
+.header-home .jumbotron h1 {
+	margin-top: {{lead_art.height - 200}}px;
+}
+{% endif %}
+</style>
+
+<div class="header-home">
+	<div class="container">
+		<div class="jumbotron" style=" ">
+			<div class="box">
+				<h1>
+					<span class="bg">
+						{% if title %}
+							{{title}}
+						{% else %}
+							{{site.title}}
+						{% endif %}
+					</span>
+				</h1>
+				{% if subtitle %}<p><span class="bg">{{subtitle}}</span></p>{% endif %}
+			</div>
+		</div>
+
+		{% if lead_art.caption %}<p class="caption text-right">{{lead_art.caption}}</p>{% endif %}
+	</div>
+</div>

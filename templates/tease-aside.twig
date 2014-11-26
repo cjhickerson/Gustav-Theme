@@ -1,0 +1,49 @@
+<div class="col-md-12">
+	{% set ratio = post.thumbnail.height / post.thumbnail.width %}
+
+	{% if post.thumbnail and ratio < 0.33 %}
+	<article id="post-{{ post.id }}" class="media col-md-12 aside">
+
+		<a href="{{post.permalink}}">
+			<img class="fit round" src="{{post.thumbnail.src}}" />
+		</a>
+
+		<div class="media-body">
+			<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
+			<p class="blog-author">
+				<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+			</p>
+			<p>{{ post.get_preview(30) }}</p>
+			<div class="terms">
+				{% for term in post.terms if term.taxonomy == 'category' %}
+				<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.name}}">{{term.name}}</a>
+				{% endfor %}
+			</div>
+		</div>
+	</article>
+	{% else %}
+	<article id="post-{{ post.id }}" class="media col-md-12 aside">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="{{post.permalink}}">
+					<img class="fit round" src="{{post.thumbnail.src}}" />
+				</a>
+			</div>
+			<div class="col-md-8">
+				<div class="media-body">
+					<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
+					<p class="blog-author">
+						<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+					</p>
+					<p>{{ post.get_preview(120) }}</p>
+					<div class="terms">
+						{% for term in post.terms if term.taxonomy == 'category' %}
+						<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.name}}">{{term.name}}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	{% endif %}
+</div>

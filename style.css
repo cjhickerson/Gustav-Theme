@@ -1,0 +1,100 @@
+/*
+Theme Name: Gustav
+Theme URI: https://github.com/cjhickerson/Gustav-Theme
+Author: Chris Hickerson
+Author URI: http://chrishickerson.com
+Description: This is a simple theme I developed to for my personal uses and to aid my work on my Model-Timber-Viewer plugin mashup (https://github.com/cjhickerson/Model-Timber-Viewer). 
+*/
+
+/* header */
+header nav.navbar {
+	margin-bottom: 0;
+}
+
+header nav .container-fluid {
+	max-width: 1170px;
+}
+
+img.fit {
+	width: 100%;
+}
+
+img.round {
+	border-radius: 0;
+}
+
+/* Header-Home.twig */
+.header-home {
+	margin-bottom: 30px;
+}
+.header-home .jumbotron,
+footer {
+	background: #ddd;
+	text-align: center;
+	margin:5px 0;
+	border-radius: 0;
+	/*border-radius: 15px 15px 0 0;*/
+}
+
+.header-home .jumbotron h1,
+.header-home .jumbotron p {
+	margin: 15px 0;
+}
+
+.header-home .jumbotron .bg,
+footer .bg {
+	color: #333;
+	font-weight: 700;
+	background: #fff;/*rgba(0,0,0, 1);*/
+	padding: 5px 15px;
+	text-align: center;
+}
+
+.header-home .caption {
+	margin: 5px 10px;
+}
+
+/* tease */
+section#content .pseudo-row,
+section#content .aside {
+	border-top: 1px solid #ddd;
+	margin:0;
+}
+
+section#content article {
+	padding: 30px 15px;
+}
+
+section#content article.col-md-12 img {
+	padding-bottom: 10px;
+}
+
+section#content article .media-left {
+	padding-right: 30px;
+}
+
+/* footer */
+footer {
+	/*border-radius: 0 0 15px 15px;*/
+	padding: 30px 15px;
+}
+
+/* single */
+.post-img {
+	padding: 0px 30px 30px;
+	max-width: 66%;
+	border-radius: 6px;
+}
+
+.post-img.pull-right {
+	padding-right:0;
+}
+
+.post-img.pull-left {
+	padding-left:0;
+}
+
+.caption,
+.post-img .caption {
+	color: #666;
+}

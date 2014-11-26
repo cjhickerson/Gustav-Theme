@@ -1,0 +1,18 @@
+{% block header %}
+<header>
+  <nav id="access" class="main-navigation navbar" role="navigation">
+	  <div class="container-fluid">
+		  <div class="navbar-header">
+			  <a class="hdr-logo-link navbar-brand" href="{{site.url}}" title="Timber" rel="home">{{site.name}}</a>
+		  </div>
+		  <ul class="navbar-nav nav">
+		  {% for item in menu.items %}
+			  <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+				  <a href="{{item.link}}">{{item.title}}</a>
+			  </li>
+		  {% endfor %}
+		  </ul>
+	  </div>
+  </nav>
+</header>
+{% endblock %}
