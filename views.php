@@ -18,7 +18,7 @@ function index( $request ) {
     $paged = isset($request[0]) ? $request[0] : 1;
 
     $args = array('post_type' => 'post',
-              'posts_per_page' => 10,
+              'posts_per_page' => 5,
               'paged' => $paged,
               'order' => 'DESC');
     
@@ -29,6 +29,9 @@ function index( $request ) {
 	
 	$context['lead_art'] = new TimberImage(6413);
 	$context['home'] = ($paged > 1) ? false : true;
+	if (!$context['home']) {
+		$context['sidebar'] = Timber::get_widgets('main_sidebar');
+	}
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();
 	$templates = array('index.twig');

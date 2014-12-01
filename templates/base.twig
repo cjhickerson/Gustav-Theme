@@ -15,10 +15,24 @@
 	
 	<div class="container">
 		<section id="content" role="main" class="content-wrapper">
-			{% block content %}
-				Sorry, no content
-			{% endblock %}
+			{% if home == false %}
+			<div class="row">
+				<div class="col-md-8">
+			{% endif %}
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			{% if home == false %}
+				</div>
+				<div class="col-md-4">
+				{% include 'sidebar/sidebar.twig' %}
+				</div>
+			</div>
+			{% endif %}
 		</section>
+		
+		{% include "pagination.twig" %}
+
 	</div>
 	
 

@@ -109,5 +109,15 @@ $custom_header_args = array(
 	'random-default'         => false,
 	'header-text'            => false,
 );
-
 add_theme_support( 'custom-header', $custom_header_args );
+
+$sidebarargs = array(
+	'name'          => 'Sidebar',
+	'id'            => 'main_sidebar',
+	'description'   => '',
+    'class'         => '',
+	'before_widget' => '<div id="%1$s" class="panel panel-default widget %2$s">',
+	'after_widget'  => '</div></div>',
+	'before_title'  => '<div class="panel-heading widgettitle">',
+	'after_title'   => '</div><div class="panel-body">' );
+register_sidebar($sidebarargs);
