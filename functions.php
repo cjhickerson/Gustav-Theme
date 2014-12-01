@@ -77,14 +77,23 @@ function Gustav_customize_register( $wp_customize ) {
 	) );
 	// Add settings for controls
 	$wp_customize->add_setting( 'footer_textcolor' , array(
-    	'default'     => '#000000',
+    	'default'     => '#fff',
+    	'transport'   => 'refresh',
+	) );
+	$wp_customize->add_setting( 'footer_bgcolor' , array(
+    	'default'     => '#333',
     	'transport'   => 'refresh',
 	) );
 	// Finally add actual controls
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
-		'label'        => 'Footer Background Color',
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
+		'label'        => 'Footer Text Color',
 		'section'    => 'Gustav_Settings',
 		'settings'   => 'footer_textcolor',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', array(
+		'label'        => 'Footer Background Color',
+		'section'    => 'Gustav_Settings',
+		'settings'   => 'footer_bgcolor',
 	) ) );
 	
 }

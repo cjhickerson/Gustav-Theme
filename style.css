@@ -61,6 +61,13 @@ section#content .aside {
 	margin:0;
 }
 
+section#content .aside {
+	background:#333;
+	color: #fff;
+	padding: 30px;
+	margin-bottom: 10px;
+}
+
 section#content article {
 	padding: 30px 15px;
 }
@@ -71,6 +78,10 @@ section#content article.col-md-12 img {
 
 section#content article .media-left {
 	padding-right: 30px;
+}
+
+section#content .aside.wide .media-body {
+	padding-top: 10px;
 }
 
 /* footer */
