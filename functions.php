@@ -48,10 +48,17 @@ class Gustav extends TimberSite {
     function add_to_twig($twig){
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension(new Twig_Extension_StringLoader());
+		
 		$function = new Twig_SimpleFunction('get_post_format', function($id) {
 			return get_post_format($id);
 		});
 		$twig->addFunction($function);
+		
+		$get_theme_mod = new Twig_SimpleFunction('get_theme_mod', function($id) {
+			return get_theme_mod($id);
+		});
+		$twig->addFunction($get_theme_mod);
+		
         return $twig;
     }
 
@@ -61,6 +68,27 @@ new Gustav();
 
 add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'quote' ) );
 add_post_type_support( 'post', 'post-formats' );
+
+function Gustav_customize_register( $wp_customize ) {
+	// Add Section for controls
+	$wp_customize->add_section( 'Gustav_Settings' , array(
+		'title'      => 'Gustav Settings',
+		'priority'   => 30,
+	) );
+	// Add settings for controls
+	$wp_customize->add_setting( 'footer_textcolor' , array(
+    	'default'     => '#000000',
+    	'transport'   => 'refresh',
+	) );
+	// Finally add actual controls
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
+		'label'        => 'Footer Background Color',
+		'section'    => 'Gustav_Settings',
+		'settings'   => 'footer_textcolor',
+	) ) );
+	
+}
+add_action( 'customize_register', 'Gustav_customize_register' );
 
 $custom_header_args = array(
 	'default-image'          => '',

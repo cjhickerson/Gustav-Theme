@@ -57,7 +57,7 @@ footer .bg {
 /* tease */
 section#content .pseudo-row,
 section#content .aside {
-	border-top: 1px solid #ddd;
+	/*border-top: 1px solid #ddd;*/
 	margin:0;
 }
 
