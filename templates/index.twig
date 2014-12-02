@@ -9,13 +9,17 @@
 					{% set format = get_post_format(post.id) %}
 				{% endif %}
 			{% endfor %}
-			
+
 			<div class="row">
 			{% for post in row %}
 				{% if format == 'aside' and get_post_format(post.id) %}
-					{% include 'tease-aside.twig' %}
+					{% include 'tease/tease-aside.twig' %}
 				{% else %}
-					{% include 'tease.twig' %}
+					{% if settings.tease_width == "half" %}
+						{% include 'tease/tease-half.twig' %}
+					{% else %}
+						{% include 'tease/tease.twig' %}
+					{% endif %}
 				{% endif %}
 			{% endfor %}
 			</div>

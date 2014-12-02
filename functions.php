@@ -42,6 +42,11 @@ class Gustav extends TimberSite {
         $context['menu'] = new TimberMenu();
         $context['site'] = $this;
 		$context['custom_header'] = get_custom_header();
+		$context['settings'] = array ( 
+			sidebar_position => get_theme_mod('sidebar_position'),
+			aside_thumbnail_position => get_theme_mod('aside_thumbnail_position'),
+			tease_width => get_theme_mod('tease_width'),
+		);
         return $context;
     }
 
@@ -66,58 +71,4 @@ class Gustav extends TimberSite {
 Timber::$dirname = 'templates';
 new Gustav();
 
-add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'quote' ) );
-add_post_type_support( 'post', 'post-formats' );
-
-function Gustav_customize_register( $wp_customize ) {
-	// Add Section for controls
-	$wp_customize->add_section( 'Gustav_Settings' , array(
-		'title'      => 'Gustav Settings',
-		'priority'   => 30,
-	) );
-	// Add settings for controls
-	$wp_customize->add_setting( 'footer_textcolor' , array(
-    	'default'     => '#fff',
-    	'transport'   => 'refresh',
-	) );
-	$wp_customize->add_setting( 'footer_bgcolor' , array(
-    	'default'     => '#333',
-    	'transport'   => 'refresh',
-	) );
-	// Finally add actual controls
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', array(
-		'label'        => 'Footer Text Color',
-		'section'    => 'Gustav_Settings',
-		'settings'   => 'footer_textcolor',
-	) ) );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', array(
-		'label'        => 'Footer Background Color',
-		'section'    => 'Gustav_Settings',
-		'settings'   => 'footer_bgcolor',
-	) ) );
-	
-}
-add_action( 'customize_register', 'Gustav_customize_register' );
-
-$custom_header_args = array(
-	'default-image'          => '',
-	'width'                  => 1170,
-	'height'                 => 0,
-	'flex-height'            => true,
-	'flex-width'             => true,
-	'uploads'                => true,
-	'random-default'         => false,
-	'header-text'            => false,
-);
-add_theme_support( 'custom-header', $custom_header_args );
-
-$sidebarargs = array(
-	'name'          => 'Sidebar',
-	'id'            => 'main_sidebar',
-	'description'   => '',
-    'class'         => '',
-	'before_widget' => '<div id="%1$s" class="panel panel-default widget %2$s">',
-	'after_widget'  => '</div></div>',
-	'before_title'  => '<div class="panel-heading widgettitle">',
-	'after_title'   => '</div><div class="panel-body">' );
-register_sidebar($sidebarargs);
+require_once('theme_settings.php');

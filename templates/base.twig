@@ -15,18 +15,25 @@
 	
 	<div class="container">
 		<section id="content" role="main" class="content-wrapper">
-			{% if home == false %}
+			{% if sidebar %}
 			<div class="row">
-				<div class="col-md-8">
+				{% if settings.sidebar_position == "left" %}
+				<div class="col-md-3">
+				{% include 'sidebar/sidebar.twig' %}
+				</div>
+				{% endif %}
+				<div class="col-md-9">
 			{% endif %}
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
-			{% if home == false %}
+			{% if sidebar %}
 				</div>
-				<div class="col-md-4">
+				{% if settings.sidebar_position == "right" %}
+				<div class="col-md-3">
 				{% include 'sidebar/sidebar.twig' %}
 				</div>
+				{% endif %}
 			</div>
 			{% endif %}
 		</section>

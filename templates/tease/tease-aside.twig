@@ -9,42 +9,43 @@
 		</a>
 
 		<div class="row">
-			<div class="media-body col-md-8 col-md-offset-2">
+			<div class="media-body col-md-12">
 				<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
 				<p class="blog-author">
 					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
 				</p>
 				<p>{{ post.get_preview(30) }}</p>
-				<div class="terms">
-					{% for term in post.terms if term.taxonomy == 'category' %}
-					<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.name}}">{{term.name}}</a>
-					{% endfor %}
-				</div>
+				{% include 'tease/misc/categories.twig' %}
 			</div>
 		</div>
 	</article>
 	{% else %}
 	<article id="post-{{ post.id }}" class="media aside">
 		<div class="row">
-			<div class="col-md-4">
+			{% if settings.aside_thumbnail_position == "left" %}
+			<div class="col-md-6">
 				<a href="{{post.permalink}}">
 					<img class="fit round" src="{{post.thumbnail.src}}" />
 				</a>
 			</div>
-			<div class="col-md-8">
+			{% endif %}
+			<div class="col-md-6">
 				<div class="media-body">
 					<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
 					<p class="blog-author">
 						<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
 					</p>
-					<p>{{ post.get_preview(120) }}</p>
-					<div class="terms">
-						{% for term in post.terms if term.taxonomy == 'category' %}
-						<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.name}}">{{term.name}}</a>
-						{% endfor %}
-					</div>
+					<p>{{ post.get_preview(60) }}</p>
+					{% include 'tease/misc/categories.twig' %}
 				</div>
 			</div>
+			{% if settings.aside_thumbnail_position == "right" %}
+			<div class="col-md-6">
+				<a href="{{post.permalink}}">
+					<img class="fit round" src="{{post.thumbnail.src}}" />
+				</a>
+			</div>
+			{% endif %}
 		</div>
 	</article>
 	{% endif %}
