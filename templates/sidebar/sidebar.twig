@@ -1,1 +1,23 @@
-{{sidebar}}
+<div class="sidebar hidden-sm hidden-xs">
+	{{sidebar}}
+</div>
+
+<div class="panel-group visible-sm visible-xs" id="sidebar" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="paneOneHeading">
+      <h4 class="panel-title">
+		<button type="button" class="btn btn-default collapsed" data-toggle="collapse" data-target="#paneOne">
+		Toggle Sidebar
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+      </h4>
+    </div>
+    <div id="paneOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="paneOneHeading">
+      <div class="panel-body">
+		  {{sidebar}}
+      </div>
+    </div>
+  </div>
+</div>
