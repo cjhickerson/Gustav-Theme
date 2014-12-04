@@ -40,6 +40,11 @@ header nav .container-fluid {
 	margin-bottom: 30px;
 }
 
+.header-home .jumbotron {
+	border-radius: 0;
+	text-align: center;
+}
+
 .header-home .jumbotron h1,
 .header-home .jumbotron p {
 	margin: 15px 0;
@@ -99,7 +104,7 @@ section#content .link p {
 
 /* footer */
 footer {
-	padding: 30px 15px;
+	padding: 0 15px 30px;
 }
 
 /* sidebar / aside */
