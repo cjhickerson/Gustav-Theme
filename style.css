@@ -6,13 +6,9 @@ Author URI: http://chrishickerson.com
 Description: This is a simple theme I developed to for my personal uses and to aid my work on my Model-Timber-Viewer plugin mashup (https://github.com/cjhickerson/Model-Timber-Viewer). 
 */
 
-/* header */
-header nav.navbar {
-	margin-bottom: 0;
-}
-
-header nav .container-fluid {
-	max-width: 1170px;
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
 }
 
 img.fit {
@@ -23,17 +19,25 @@ img.round {
 	border-radius: 0;
 }
 
+blockquote {
+	font-weight: 300;
+	margin: 15px 0;
+	border-left: 10px solid rgb(244, 244, 244);
+	border-right: 10px solid rgb(244, 244, 244);
+}
+
+/* header */
+header nav.navbar {
+	margin-bottom: 0;
+}
+
+header nav .container-fluid {
+	max-width: 1170px;
+}
+
 /* Header-Home.twig */
 .header-home {
 	margin-bottom: 30px;
-}
-.header-home .jumbotron,
-footer {
-	background: #ddd;
-	text-align: center;
-	margin:5px 0;
-	border-radius: 0;
-	/*border-radius: 15px 15px 0 0;*/
 }
 
 .header-home .jumbotron h1,
@@ -72,8 +76,25 @@ section#content article .media-left {
 	padding-right: 30px;
 }
 
-section#content .aside.wide .media-body {
-	padding-top: 10px;
+section#content .media-heading {
+	margin-top:10px;
+}
+
+section#content blockquote,
+section#content .link {
+	margin:0 0 30px;
+	font-size: 20px;
+}
+
+section#content .link {
+	font-size: 30px;
+	padding:15px;
+}
+
+section#content .link p {
+	display:inline-block;
+	padding: 0 15px;
+	margin: 0;
 }
 
 /* footer */

@@ -17,11 +17,11 @@ function Gustav_customize_register( $wp_customize ) {
 		'priority'   => 110,
 	) );
 	// Add settings for controls
-	$wp_customize->add_setting( 'footer_textcolor' , array(
+	$wp_customize->add_setting( 'textcolor' , array(
     	'default'     => '#fff',
     	'transport'   => 'refresh',
 	) );
-	$wp_customize->add_setting( 'footer_bgcolor' , array(
+	$wp_customize->add_setting( 'bgcolor' , array(
     	'default'     => '#333',
     	'transport'   => 'refresh',
 	) );
@@ -39,14 +39,14 @@ function Gustav_customize_register( $wp_customize ) {
 	) );
 	// Finally add actual controls
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_textcolor', 		array(
-		'label'        => 'Footer Text Color',
+		'label'        => 'Text Color',
 		'section'    => 'Gustav_Color_Settings',
-		'settings'   => 'footer_textcolor',
+		'settings'   => 'textcolor',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', 		array(
-		'label'        => 'Footer Background Color',
+		'label'        => 'Background Color',
 		'section'    => 'Gustav_Color_Settings',
-		'settings'   => 'footer_bgcolor',
+		'settings'   => 'bgcolor',
 	) ) );
 	$wp_customize->add_control( 'sidebar_position', 
 		array(
