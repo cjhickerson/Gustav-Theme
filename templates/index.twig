@@ -12,18 +12,10 @@
 
 			<div class="row">
 			{% for post in row %}
-				{% if get_post_format(post.id) == 'aside' %}
-					{% include 'tease/tease-aside.twig' %}
-				{% elseif get_post_format(post.id) == 'quote' %}
-					{% include 'tease/tease-quote.twig' %}
-				{% elseif get_post_format(post.id) == 'link' %}
-					{% include 'tease/tease-link.twig' %}
+				{% if settings.tease_width == "half" %}
+					{% include ['tease/tease-'~get_post_format(post.id)~'.twig', 'tease/tease-half.twig'] %}
 				{% else %}
-					{% if settings.tease_width == "half" %}
-						{% include 'tease/tease-half.twig' %}
-					{% else %}
-						{% include 'tease/tease.twig' %}
-					{% endif %}
+					{% include ['tease/tease-'~get_post_format(post.id)~'.twig', 'tease/tease.twig'] %}
 				{% endif %}
 			{% endfor %}
 			</div>

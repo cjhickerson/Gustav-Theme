@@ -43,9 +43,9 @@ class Gustav extends TimberSite {
         $context['site'] = $this;
 		$context['custom_header'] = get_custom_header();
 		$context['settings'] = array ( 
-			sidebar_position => get_theme_mod('sidebar_position'),
-			aside_thumbnail_position => get_theme_mod('aside_thumbnail_position'),
-			tease_width => get_theme_mod('tease_width'),
+			'sidebar_position' => get_theme_mod('sidebar_position'),
+			'aside_thumbnail_position' => get_theme_mod('aside_thumbnail_position'),
+			'tease_width' => get_theme_mod('tease_width'),
 		);
         return $context;
     }
