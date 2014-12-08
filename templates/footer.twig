@@ -1,5 +1,17 @@
 <footer id="footer" class="container">
-	<div class="text-center"><span class="bg">Copyright {{"now"|date('Y')}}</span></div>
+	<nav id="access" class="main-navigation navbar" role="navigation">
+	  <div class="container-fluid">
+		  <ul class="nav nav-justified">
+			  <li class="menu-item"><a href="{{site.url}}" rel="home">{{site.name}}</a></li>
+		  {% for item in menu.items %}
+			  <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+				  <a href="{{item.link}}">{{item.title}}</a>
+			  </li>
+		  {% endfor %}
+			  <li class="menu-item"><a>Copyright {{"now"|date('Y')}}</a></li>
+		  </ul>
+	  </div>
+	</nav>
 </footer>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

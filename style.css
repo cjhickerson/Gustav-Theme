@@ -26,6 +26,12 @@ blockquote {
 	border-right: 10px solid rgb(244, 244, 244);
 }
 
+.btn {
+	border-radius: 0;
+	border: none;
+	padding: 5px 10px;
+}
+
 /* header */
 header nav.navbar {
 	margin-bottom: 0;
@@ -33,6 +39,12 @@ header nav.navbar {
 
 header nav .container-fluid {
 	max-width: 1170px;
+}
+
+.page-header {
+	border: none;
+	padding: 30px 0;
+	margin: 0 0 30px;
 }
 
 /* Header-Home.twig */
@@ -92,19 +104,23 @@ section#content .link {
 }
 
 section#content .link {
-	font-size: 30px;
-	padding:15px;
+	font-size: 20px;
+	padding:15px 20px;
 }
 
 section#content .link p {
 	display:inline-block;
-	padding: 0 15px;
+	padding: 0 10px;
 	margin: 0;
 }
 
 /* footer */
-footer {
-	padding: 0 15px 30px;
+#footer {
+	padding: 30px 0;
+}
+
+#footer nav {
+	margin-bottom: 0;
 }
 
 /* sidebar / aside */

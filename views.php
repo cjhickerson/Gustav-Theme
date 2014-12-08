@@ -66,8 +66,10 @@ function category( $request ) {
               'order' => 'DESC');
     
     query_posts($args);
-
+	
     $context = Timber::get_context();
+	$context['title'] = '<strong>'.$context['wp_title'].'</strong> Posts';
+	$context['sidebar'] = Timber::get_widgets('main_sidebar');
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();
 	$templates = array('index.twig');
