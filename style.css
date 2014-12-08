@@ -41,7 +41,12 @@ header nav .container-fluid {
 	max-width: 1170px;
 }
 
+header nav .navbar-brand {
+	font-weight: bold;
+}
+
 .page-header {
+	font-size: 63px;
 	border: none;
 	padding: 30px 0;
 	margin: 0 0 30px;
@@ -134,21 +139,32 @@ aside.widget .widgettitle {
 }
 
 /* single */
-.post-img {
-	padding: 0px 30px 30px;
-	max-width: 66%;
-	border-radius: 6px;
+.single header {
+	padding: 0 0 30px;
 }
-
-.post-img.pull-right {
-	padding-right:0;
-}
-
-.post-img.pull-left {
-	padding-left:0;
-}
-
-.caption,
-.post-img .caption {
+.wp-caption-text {
 	color: #666;
+}
+
+img.alignright,
+div.wp-caption.alignright {
+	float: right;
+	margin: 15px 0 15px 30px;
+}
+
+img.alignleft,
+div.wp-caption.alignleft {
+	float: left;
+	margin: 15px 30px 15px 0px;
+}
+
+img.aligncenter,
+div.wp-caption.aligncenter {
+	margin: 15px auto;
+}
+
+/* widgets */
+.widget .widget-body ul {
+	list-style: none;
+	padding-left: 0;
 }

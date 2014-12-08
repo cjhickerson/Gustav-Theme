@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
 <head>
 	<meta charset="{{site.charset}}" />
-	<title>{{site.title}}</title>
+	<title>{% if wp_title %}{{ wp_title }} | {% endif %} {{site.title}}</title>
 	<meta name="description" content="{{site.description}}">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<!-- <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/lumen/bootstrap.min.css" rel="stylesheet"> -->
@@ -26,6 +26,14 @@
 		background: {{get_theme_mod('bgcolor')}};
 		color: {{get_theme_mod('textcolor')}};
 	}
+	{% if get_theme_mod('bgcolor') == '#ffffff' %}
+	aside.widget,
+	section#content .link,
+	.btn,
+	.page-header {
+		border: 1px solid #eee;
+	}
+	{% endif %}
 	</style>
 	
 	{{wp_head}}
