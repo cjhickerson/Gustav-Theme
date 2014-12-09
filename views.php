@@ -9,6 +9,7 @@ use mtv\wp\models\PostCollection,
 
 function fourofour( $request, $context ){
 	$templates = array('404.twig');
+	$context['sidebar'] = null;
 	$context['request'] = $request[0];
 	Timber::render($templates, $context);
 }
@@ -29,9 +30,7 @@ function index( $request ) {
 	
 	$context['lead_art'] = new TimberImage(6413);
 	$context['home'] = ($paged > 1) ? false : true;
-	//if (!$context['home']) {
-		$context['sidebar'] = Timber::get_widgets('main_sidebar');
-	//}
+	$context['sidebar'] = Timber::get_widgets('main_sidebar');
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();
 	$templates = array('index.twig');

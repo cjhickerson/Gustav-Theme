@@ -168,3 +168,8 @@ div.wp-caption.aligncenter {
 	list-style: none;
 	padding-left: 0;
 }
+
+/* 404 */
+.container.fourofour {
+	padding: 60px 0;
+}
