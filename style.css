@@ -16,7 +16,7 @@ img.fit {
 }
 
 img.round {
-	border-radius: 0;
+	border-radius: 4px;
 }
 
 blockquote {
@@ -27,7 +27,7 @@ blockquote {
 }
 
 .btn {
-	border-radius: 0;
+	border-radius: 4px;
 	border: none;
 	padding: 5px 10px;
 }
@@ -35,6 +35,7 @@ blockquote {
 /* header */
 header nav.navbar {
 	margin-bottom: 0;
+	border-radius: 0;
 }
 
 header nav .container-fluid {
@@ -58,7 +59,7 @@ header nav .navbar-brand {
 }
 
 .header-home .jumbotron {
-	border-radius: 0;
+	border-radius: 0 0 4px 4px;
 	text-align: center;
 }
 
@@ -74,6 +75,7 @@ footer .bg {
 	background: #fff;/*rgba(0,0,0, 1);*/
 	padding: 5px 15px;
 	text-align: center;
+	border-radius: 4px;
 }
 
 .header-home .caption {
@@ -106,6 +108,7 @@ section#content blockquote,
 section#content .link {
 	margin:0 0 30px;
 	font-size: 20px;
+	border-radius: 4px;
 }
 
 section#content .link {
@@ -124,14 +127,26 @@ section#content .link p {
 	padding: 30px 0;
 }
 
-#footer nav {
+#footer .nav {
 	margin-bottom: 0;
+	border: 1px solid #eee;
+	border-radius: 4px;
 }
+
+#footer .nav li {
+	border-left: 1px solid #eee;
+}
+
+#footer .nav li:first-child {
+	border-left: 0;
+}
+
 
 /* sidebar / aside */
 aside.widget {
 	padding: 15px;
 	margin-bottom: 30px;
+	border-radius: 4px;
 }
 
 aside.widget .widgettitle {

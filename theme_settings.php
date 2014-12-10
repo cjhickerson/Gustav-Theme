@@ -21,6 +21,10 @@ function Gustav_customize_register( $wp_customize ) {
     	'default'     => '#fff',
     	'transport'   => 'refresh',
 	) );
+	$wp_customize->add_setting( 'linkcolor' , array(
+    	'default'     => '#337AB7',
+    	'transport'   => 'refresh',
+	) );
 	$wp_customize->add_setting( 'bgcolor' , array(
     	'default'     => '#333',
     	'transport'   => 'refresh',
@@ -42,6 +46,11 @@ function Gustav_customize_register( $wp_customize ) {
 		'label'        => 'Text Color',
 		'section'    => 'Gustav_Color_Settings',
 		'settings'   => 'textcolor',
+	) ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_linkcolor', 		array(
+		'label'        => 'Link Color',
+		'section'    => 'Gustav_Color_Settings',
+		'settings'   => 'linkcolor',
 	) ) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'footer_bgcolor', 		array(
 		'label'        => 'Background Color',

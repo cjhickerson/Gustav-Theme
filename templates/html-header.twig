@@ -19,10 +19,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<style type="text/css">
+	header nav,
+	header nav a,
 	aside.widget,
+	aside.widget a,
 	section#content .link,
+	section#content .link a,
 	.btn,
-	.page-header {
+	.page-header,
+	.pagination li.page-number.active {
 		background: {{get_theme_mod('bgcolor')}};
 		color: {{get_theme_mod('textcolor')}};
 	}
@@ -34,6 +39,9 @@
 		border: 1px solid #eee;
 	}
 	{% endif %}
+	a {
+		color: {{get_theme_mod('linkcolor')}}
+	}
 	</style>
 	
 	{{wp_head}}
