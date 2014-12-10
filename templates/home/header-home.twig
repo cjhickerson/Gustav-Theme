@@ -12,8 +12,8 @@
 </style>
 
 <div class="header-home">
-	<div class="container">
-		<div class="jumbotron" style=" ">
+	<div class="container hidden-sm hidden-xs">
+		<div class="jumbotron">
 			<div class="box">
 				<h1>
 					<span class="bg">
@@ -29,5 +29,8 @@
 		</div>
 
 		{% if lead_art.caption %}<p class="caption text-right">{{lead_art.caption}}</p>{% endif %}
+	</div>
+	<div class="container visible-sm visible-xs">
+		<h1>{% if title %}{{title}}{% else %}{{site.title}}{% endif %}</h1>
 	</div>
 </div>

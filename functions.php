@@ -1,5 +1,6 @@
 <?php
 define("DEPLOYMENT_TARGET", "development");
+
 // Configure MTV
 if ( function_exists('mtv\register_app') )
     mtv\register_app('mtv_theme', __DIR__);
