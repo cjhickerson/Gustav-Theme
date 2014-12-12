@@ -21,10 +21,12 @@
 				<div class="col-md-3">
 				{% include 'sidebar/sidebar.twig' %}
 				</div>
+				{% endif %}
 				
-				<div class="col-md-9">
-				{% else %}
+				{% if settings.sidebar_position == "hide" %}
 				<div class="col-md-12">
+				{% else %}
+				<div class="col-md-9">
 				{% endif %}
 			{% endif %}
 				{% block content %}

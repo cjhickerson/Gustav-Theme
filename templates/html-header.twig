@@ -20,27 +20,34 @@
 	
 	<style type="text/css">
 	header nav,
-	header nav a,
 	aside.widget,
-	aside.widget a,
 	section#content .link,
-	section#content .link a,
 	.btn,
-	.page-header,
-	.pagination li.page-number.active {
+	.page-header {
 		background: {{get_theme_mod('bgcolor')}};
 		color: {{get_theme_mod('textcolor')}};
 	}
 	{% if get_theme_mod('bgcolor') == '#ffffff' %}
 	aside.widget,
 	section#content .link,
-	.btn,
-	.page-header {
+	.btn {
 		border: 1px solid #eee;
 	}
 	{% endif %}
-	a {
+	a,
+	section#content .link a,
+	aside.widget a,
+	header nav a {
 		color: {{get_theme_mod('linkcolor')}}
+	}
+	
+	.pagination li a {
+		color: {{get_theme_mod('linkcolor')}};
+	}
+
+	.pagination li.page-number.active span {
+		background: {{get_theme_mod('linkcolor')}};
+		border-color: {{get_theme_mod('linkcolor')}};
 	}
 	</style>
 	
