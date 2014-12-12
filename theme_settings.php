@@ -63,7 +63,7 @@ function Gustav_customize_register( $wp_customize ) {
 			'section'  => 'Gustav_Sidebar_Settings',
 			'settings' => 'sidebar_position',
 			'type'     => 'radio',
-			'choices'  => array( 'left'  => 'left', 'right' => 'right' )
+			'choices'  => array( 'left'  => 'Left', 'right' => 'Right', 'hide' => 'None' )
 		) 
 	);
 	$wp_customize->add_control( 'aside_thumbnail_position', 
