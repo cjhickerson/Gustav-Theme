@@ -1,5 +1,5 @@
 <div class="terms">
 	{% for term in post.categories if term.name != 'Uncategorized' %}
-	<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.name}}">{{term.name}}</a>
+	<a class="btn btn-xs btn-default" href="{{site.url}}/category/{{term.slug}}">{{term.name}}</a>
 	{% endfor %}
 </div>

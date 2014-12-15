@@ -216,8 +216,10 @@ div.wp-caption.aligncenter {
 
 /********** RESPONSIVE CLASSES **********/
 @media (max-width: 768px) {
-/* Single */
-.single .wp-caption {
-	width: 100% !important;
-}
+	
+	/* Single */
+	.single .wp-caption {
+		width: 100% !important;
+	}
+	
 }

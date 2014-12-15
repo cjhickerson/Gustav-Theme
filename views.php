@@ -43,7 +43,7 @@ function single( $request ) {
                   'name' => $request[0],
                   'order' => 'DESC');
     $context = Timber::get_context();
-	$context['sidebar'] = Timber::get_widgets('main_sidebar');
+	$context['sidebar'] = false;
     $post = Timber::get_posts($args);
     $context['post'] = (isset($post[0])) ? $post[0] : null;
 	
