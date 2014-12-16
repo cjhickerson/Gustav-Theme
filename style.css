@@ -189,13 +189,13 @@ p.wp-caption-text {
 img.alignright,
 div.wp-caption.alignright {
 	float: right;
-	margin: 15px 0 15px 30px;
+	margin: 0px 0px 15px 30px;
 }
 
 img.alignleft,
 div.wp-caption.alignleft {
 	float: left;
-	margin: 15px 30px 15px 0px;
+	margin: 0px 30px 15px 0px;
 }
 
 img.aligncenter,

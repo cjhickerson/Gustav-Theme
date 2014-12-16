@@ -18,8 +18,10 @@ function index( $request ) {
     global $paged;
     $paged = isset($request[0]) ? $request[0] : 1;
 
+	$posts_per_page = get_option('posts_per_page');
+	
     $args = array('post_type' => 'post',
-              'posts_per_page' => 5,
+              'posts_per_page' => $posts_per_page,
               'paged' => $paged,
               'order' => 'DESC');
     
@@ -59,8 +61,10 @@ function category( $request ) {
 	global $paged;
     $paged = isset($request[1]) ? $request[1] : 1;
 
+	$posts_per_page = get_option('posts_per_page');
+	
     $args = array('post_type' => 'post',
-              'posts_per_page' => 10,
+              'posts_per_page' => $posts_per_page,
 			  'category_name' => $request[0],
               'paged' => $paged,
               'order' => 'DESC');
