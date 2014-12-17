@@ -7,8 +7,7 @@ Description: This is a simple theme I developed to for my personal uses and to a
 */
 
 body {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-weight: 400;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 img.fit {
@@ -172,7 +171,7 @@ article.single h1 {
 
 .single p {
 	font-size:15px;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	margin-bottom: 30px;
 }
 
