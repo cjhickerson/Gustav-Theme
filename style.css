@@ -7,8 +7,7 @@ Description: This is a simple theme I developed to for my personal uses and to a
 */
 
 body {
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-	font-weight: 400;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 img.fit {
@@ -114,7 +113,6 @@ section#content blockquote,
 section#content .link {
 	margin:0 0 30px;
 	font-size: 20px;
-	border-radius: 4px;
 }
 
 section#content .link {
@@ -173,7 +171,7 @@ article.single h1 {
 
 .single p {
 	font-size:15px;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	margin-bottom: 30px;
 }
 
@@ -205,8 +203,11 @@ div.wp-caption.aligncenter {
 
 /* widgets */
 .widget .widget-body > ul {
-	list-style: none;
-	padding-left: 0;
+	padding-left: 15px;
+}
+
+.widget .widget-body > ul ul {
+	padding-left: 15px;
 }
 
 /* 404 */

@@ -6,7 +6,6 @@ use mtv\wp\models\PostCollection,
      WP_Query,
 	 TimberImage;
 
-
 function fourofour( $request, $context ){
 	$templates = array('404.twig');
 	$context['sidebar'] = null;
@@ -20,7 +19,7 @@ function index( $request ) {
 
 	$posts_per_page = get_option('posts_per_page');
 	
-    $args = array('post_type' => 'post',
+    $args = array('post_type' => array('post'),
               'posts_per_page' => $posts_per_page,
               'paged' => $paged,
               'order' => 'DESC');
@@ -40,7 +39,7 @@ function index( $request ) {
 }
 
 function single( $request ) {
-    $args = array('post_type' => array('post', 'page'),
+    $args = array('post_type' => 'any',
                   'posts_per_page' => 1,
                   'name' => $request[0],
                   'order' => 'DESC');
@@ -57,13 +56,13 @@ function single( $request ) {
 	}
 }
 
-function category( $request ) {
+function category( $request ) {	
 	global $paged;
     $paged = isset($request[1]) ? $request[1] : 1;
 
 	$posts_per_page = get_option('posts_per_page');
 	
-    $args = array('post_type' => 'post',
+    $args = array('post_type' => 'any',
               'posts_per_page' => $posts_per_page,
 			  'category_name' => $request[0],
               'paged' => $paged,
@@ -72,7 +71,7 @@ function category( $request ) {
     query_posts($args);
 	
     $context = Timber::get_context();
-	$context['title'] = '<strong>'.$context['wp_title'].'</strong> Posts';
+	$context['title'] = $context['wp_title'];
 	$context['sidebar'] = Timber::get_widgets('main_sidebar');
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();
