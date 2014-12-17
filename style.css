@@ -28,7 +28,7 @@ blockquote {
 
 .btn {
 	border-radius: 4px;
-	border: none;
+	border-color: #eee;
 	padding: 5px 10px;
 }
 
@@ -76,7 +76,7 @@ header nav .navbar-brand {
 .header-home .jumbotron .bg,
 footer .bg {
 	color: #333;
-	font-weight: 700;
+	font-weight: normal;
 	background: #fff;/*rgba(0,0,0, 1);*/
 	padding: 5px 15px;
 	text-align: center;
@@ -202,11 +202,11 @@ div.wp-caption.aligncenter {
 }
 
 /* widgets */
-.widget .widget-body > ul {
+.widget.widget_categories .widget-body > ul {
 	padding-left: 15px;
 }
 
-.widget .widget-body > ul ul {
+.widget.widget_categories .widget-body > ul ul {
 	padding-left: 15px;
 }
 
