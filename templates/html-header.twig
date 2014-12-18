@@ -5,7 +5,12 @@
 <!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
 <head>
 	<meta charset="{{site.charset}}" />
-	<title>{% if wp_title %}{{ wp_title }} | {% endif %} {{site.title}}</title>
+	<title>
+		{{site.title}}
+		{% if title %} | {{ title }}{% endif %}
+		{% if post.title %} | {{ post.title }}{% endif %}
+	</title>
+	
 	<meta name="description" content="{{site.description}}">
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

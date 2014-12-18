@@ -44,7 +44,7 @@ class Gustav extends TimberSite {
 	function register_stylesheets(){
 		wp_enqueue_style('bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css');
 		wp_enqueue_style('theme_styles', get_template_directory_uri().'/style.css');
-		wp_enqueue_style('font_roboto', 'http://fonts.googleapis.com/css?family=Roboto:100,300,900,700');
+		wp_enqueue_style('font_roboto', 'http://fonts.googleapis.com/css?family=Open+Sans:100,300,900,700');
 		wp_enqueue_style('font_awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 	}
 	
