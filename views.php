@@ -8,7 +8,6 @@ use mtv\wp\models\PostCollection,
 
 function fourofour( $request, $context ){
 	$templates = array('404.twig');
-	$context['sidebar'] = null;
 	$context['request'] = $request[0];
 	Timber::render($templates, $context);
 }
@@ -44,7 +43,6 @@ function single( $request ) {
                   'name' => $request[0],
                   'order' => 'DESC');
     $context = Timber::get_context();
-	$context['sidebar'] = false;
     $post = Timber::get_posts($args);
     $context['post'] = (isset($post[0])) ? $post[0] : null;
 	

@@ -106,6 +106,7 @@ section#content article .media-left {
 }
 
 section#content .media-heading {
+	font-weight: bold;
 	margin-top:10px;
 }
 
@@ -162,6 +163,7 @@ aside.widget .widgettitle {
 
 /* single */
 article.single h1 {
+	font-weight: bold;
 	margin-top: 0;
 }
 
