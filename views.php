@@ -9,6 +9,7 @@ use mtv\wp\models\PostCollection,
 function fourofour( $request, $context ){
 	$templates = array('404.twig');
 	$context['request'] = $request[0];
+	$context['html_title'] = $context['site']->title." | 404";
 	Timber::render($templates, $context);
 }
 
@@ -27,9 +28,8 @@ function index( $request ) {
     query_posts($args);
 	
     $context = Timber::get_context();
-	
-	$context['lead_art'] = new TimberImage(6413);
 	$context['home'] = ($paged > 1) ? false : true;
+	$context['html_head'] = $context['site']->title." | ".$context['site']->description;
 	$context['sidebar'] = Timber::get_widgets('main_sidebar');
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();
@@ -45,6 +45,7 @@ function single( $request ) {
     $context = Timber::get_context();
     $post = Timber::get_posts($args);
     $context['post'] = (isset($post[0])) ? $post[0] : null;
+	$context['html_title'] = $context['site']->title." | ".$context['post']->title;
 	
 	if (isset($context['post'])) {
     	$templates = array('single.twig');
@@ -70,6 +71,7 @@ function category( $request ) {
 	
     $context = Timber::get_context();
 	$context['title'] = $context['wp_title'];
+	$context['html_title'] = $context['site']->title." | ".$context['title'];
 	$context['sidebar'] = Timber::get_widgets('main_sidebar');
 	$context['posts'] = Timber::get_posts($args);
     $context['pagination'] = Timber::get_pagination();

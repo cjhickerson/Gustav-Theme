@@ -6,13 +6,10 @@
 <head>
 	<meta charset="{{site.charset}}" />
 	<title>
+		{% if html_title %}
+		{{ html_title }}
+		{% else %}
 		{{site.title}}
-		{% if post.title %}
-		| {{ post.title }}
-		{% elseif title %}
-		| {{ title }}
-		{% elseif site.description %}
-		| {{ site.description }}
 		{% endif %}
 	</title>
 	
