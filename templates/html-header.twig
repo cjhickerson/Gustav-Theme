@@ -7,8 +7,13 @@
 	<meta charset="{{site.charset}}" />
 	<title>
 		{{site.title}}
-		{% if title %} | {{ title }}{% endif %}
-		{% if post.title %} | {{ post.title }}{% endif %}
+		{% if post.title %}
+		| {{ post.title }}
+		{% elseif title %}
+		| {{ title }}
+		{% elseif site.description %}
+		| {{ site.description }}
+		{% endif %}
 	</title>
 	
 	<meta name="description" content="{{site.description}}">

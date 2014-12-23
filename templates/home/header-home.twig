@@ -1,8 +1,10 @@
 <style type="text/css">
+{% if custom_header.height > 0 %}
 .header-home .jumbotron {
 	background-image:url('{{custom_header.url}}'); 
 	height: {{custom_header.height}}px;
 }
+{% endif %}
 
 {% if custom_header.height > 400 %}
 .header-home .jumbotron h1 {

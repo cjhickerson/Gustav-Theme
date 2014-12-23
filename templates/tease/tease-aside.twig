@@ -11,9 +11,6 @@
 		<div class="row">
 			<div class="media-body col-md-12">
 				<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-				</p>
 				<p>{{ post.get_preview(30) }}</p>
 				{% include 'tease/misc/categories.twig' %}
 			</div>
@@ -32,9 +29,6 @@
 			<div class="col-md-6">
 				<div class="media-body">
 					<h2 class="media-heading"><a title="Permalink to {{ post.title }}" href="{{ post.permalink }}" rel="bookmark">{{ post.title }}</a></h2>
-					<p class="blog-author">
-						<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-					</p>
 					<p>{{ post.get_preview(60) }}</p>
 					{% include 'tease/misc/categories.twig' %}
 				</div>
