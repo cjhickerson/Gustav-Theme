@@ -1,14 +1,4 @@
 <?php
-define("DEPLOYMENT_TARGET", "development");
-
-// Configure MTV
-if ( function_exists('mtv\register_app') )
-    mtv\register_app('mtv_theme', __DIR__);
- 
-// Setup enabled apps
-global $apps;
-$apps = array('wp','mtv_theme');
-
 function add_to_twig($twig) {
     //$twig->addFunction( new Twig_SimpleFunction( 'function', array( $this, 'exec_function' ) ) );
     $twig->addExtension(new Twig_Extension_StringLoader());
@@ -53,8 +43,13 @@ class Gustav extends TimberSite {
 	}
 
     function add_to_context($context){
-        $context['menu'] = new TimberMenu();
+        $context['headerMenu'] = new TimberMenu('header-menu');
+        $context['footerMenu'] = new TimberMenu('footer-menu');
+
         $context['site'] = $this;
+		
+		$context['home'] = (is_home()) ? true : false;
+		
 		$context['custom_header'] = get_custom_header();
 		$context['settings'] = array ( 
 			'sidebar_position' => get_theme_mod('sidebar_position'),
@@ -86,3 +81,13 @@ Timber::$dirname = 'templates';
 new Gustav();
 
 require_once('theme_settings.php');
+
+
+/* Remove height and width attributes from images added via post editor. They cause problems with the responsive layout. */
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
+}
